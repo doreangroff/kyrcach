@@ -1,0 +1,62 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="100" d:DesignHeight="100"
+        x:Class="kyrcach.MainWindow"
+        WindowStartupLocation="CenterScreen"
+        Width="640"
+        Height="480"
+        CanResize="False"
+        Title="MainPage" Icon="Photos/bus.ico">
+    <Window.Styles>
+        <Style Selector="Button">
+            <Setter Property="Background" Value="Black"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="FontSize" Value="26"></Setter>
+            <Setter Property="FontFamily" Value="{StaticResource Omori}"></Setter>
+            <Setter Property="CornerRadius" Value="0 0 0 0 "></Setter>
+            <Setter Property="BorderThickness" Value="1.5"></Setter>
+            <Setter Property="BorderBrush" Value="Transparent"></Setter>
+            <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Background" Value="Black"></Setter>
+                <Setter Property="Foreground" Value="White"></Setter>
+            </Style>
+        </Style>
+    </Window.Styles>
+    <Grid RowDefinitions="*, Auto">
+        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0 0 0 20">
+            <TextBlock Name="s1" Opacity="1">
+                <InlineUIContainer>
+                    <Image Source="Photos/strelka.png" Stretch="Fill" Width="38" Height="38" Margin="0 0 5 0"></Image>
+                </InlineUIContainer>
+            </TextBlock>
+            <Border BorderBrush="Black" BorderThickness="1" Margin="0 0 20 0">
+                <Button Margin="2" Background="Black" Foreground="White" Name="Base" PointerEntered="ButtonOnFocus"
+                        VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="БАЗА ДАННЫХ" VerticalContentAlignment="Center" 
+                        CornerRadius="0"  HorizontalContentAlignment="Center" Padding="5 0 5 0"></Button>
+            </Border>
+            <TextBlock Opacity="0" Name="s2">
+                <InlineUIContainer>
+                    <Image Source="Photos/strelka.png" Stretch="Fill" Width="38" Height="38" Margin="0 0 5 0"></Image>
+                </InlineUIContainer>
+            </TextBlock>
+            <Border BorderBrush="Black" BorderThickness="1" Margin="0 0 20 0">
+                <Button Margin="2" Background="Black" Foreground="White" Name="Settings" PointerEntered="ButtonOnFocus"
+                        VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="НАСТРОЙКИ" VerticalContentAlignment="Center" 
+                        CornerRadius="0"  HorizontalContentAlignment="Center" Padding="5 0 5 0"></Button>
+            </Border>
+            <TextBlock Opacity="0" Name="s3">
+                <InlineUIContainer>
+                    <Image Source="Photos/strelka.png" Stretch="Fill" Width="38" Height="38" Margin="0 0 5 0"></Image>
+                </InlineUIContainer>
+            </TextBlock>
+            <Border BorderBrush="Black" BorderThickness="1" Margin="0 0 20 0">
+                <Button Margin="2" Background="Black" Foreground="White" Name="Exit" PointerEntered="ButtonOnFocus"
+                        VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="ВЫХОД" VerticalContentAlignment="Center" 
+                        CornerRadius="0"  HorizontalContentAlignment="Center" Padding="5 0 5 0"
+                        Click="Close"></Button>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Window>
