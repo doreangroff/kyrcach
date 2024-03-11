@@ -5,6 +5,7 @@
       <map>
         <entry key="kyrcach/App.axaml" value="kyrcach/kyrcach.csproj" />
         <entry key="kyrcach/MainWindow.axaml" value="kyrcach/kyrcach.csproj" />
+        <entry key="kyrcach/Windows/MainWindow.axaml" value="kyrcach/kyrcach.csproj" />
       </map>
     </option>
   </component>

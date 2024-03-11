@@ -1,0 +1,59 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="kyrcach.Windows.Baza"
+             Background="Black">
+    <UserControl.Styles>
+        <Style Selector="TextBlock">
+            <Setter Property="Background" Value="Black"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="FontSize" Value="26"></Setter>
+            <Setter Property="FontFamily" Value="{StaticResource Omori}"></Setter>
+        </Style>
+    </UserControl.Styles>
+    <Panel Name="Panel">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
+            <ListBox Name="DriversBaza" DoubleTapped="OpenDriversBaza" Background="Black" BorderBrush="White"
+                     BorderThickness="1.5" Width="550" Height="200">
+                <ListBoxItem Margin="-12, -10, -12, 0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <Grid RowDefinitions="Auto, *">
+                        <Grid Grid.Row="0" Height="30">
+                            <Border BorderBrush="White" BorderThickness="1.5">
+                                <TextBlock Text="Водители" Foreground="White" HorizontalAlignment="Stretch"></TextBlock>
+                            </Border>
+                        </Grid>
+                        <Grid Grid.Row="1" ColumnDefinitions="Auto, *">
+                            <Border HorizontalAlignment="Stretch" Grid.Column="0" BorderBrush="White" BorderThickness="1.5" Width="100" Height="100">
+                                <Image Stretch="Fill" Source="/Photos/shakal.jpg" Height="100" Width="100" VerticalAlignment="Stretch"
+                                       HorizontalAlignment="Left">
+                                </Image>
+                            </Border>
+                            <StackPanel Background="Blue" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Stretch">
+                                <Border BorderBrush="White" BorderThickness="1.5">
+                                    <Grid ColumnDefinitions="*, *">
+                                        <TextBlock Grid.Column="0" Text="Название таблицы" HorizontalAlignment="Left"></TextBlock>
+                                        <TextBlock Grid.Column="1" Text="Drivers" HorizontalAlignment="Right"></TextBlock>
+                                    </Grid>
+                                </Border>
+                                <Border BorderBrush="White" BorderThickness="1.5">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Количество колонок" HorizontalAlignment="Left"></TextBlock>
+                                        <TextBlock Text="6" HorizontalAlignment="Right"></TextBlock>
+                                    </StackPanel>
+                                </Border>
+                                <Border BorderBrush="White" BorderThickness="1.5">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Количество записей" HorizontalAlignment="Left"></TextBlock>
+                                        <TextBlock Text="0" HorizontalAlignment="Right"></TextBlock>
+                                    </StackPanel>
+                                </Border>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </ListBoxItem>
+            </ListBox>
+        </StackPanel>
+    </Panel>
+</UserControl>
