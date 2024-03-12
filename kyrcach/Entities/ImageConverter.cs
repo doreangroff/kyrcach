@@ -5,9 +5,9 @@ using Avalonia;
 using Avalonia.Media.Imaging;
 using Avalonia.Data.Converters;
 
-namespace kyrcach;
+namespace kyrcach.Entities;
 
-public class ImageConverter
+public class ImageConverter : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {

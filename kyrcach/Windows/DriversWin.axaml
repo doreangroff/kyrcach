@@ -4,15 +4,26 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:kyrcach="clr-namespace:kyrcach"
              xmlns:entitites="clr-namespace:kyrcach.Entities"
+             xmlns:drawing="clr-namespace:System.Drawing;assembly=System.Drawing.Common"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="kyrcach.Windows.DriversWin"
              Background="White">
     <UserControl.Resources>
-        <kyrcach:ImageConverter x:Key="ImageConverter" />
+        <entitites:ImageConverter x:Key="ImageConverter" />
     </UserControl.Resources>
     <ListBox Name="DriverLBox">
         <ListBox.ItemTemplate>
-            <DataTemplate DataType="kyrcach:Driver"></DataTemplate>
+            <DataTemplate DataType="entitites:Driver">
+                <StackPanel Orientation="Vertical">
+                    <Image Stretch="UniformToFill" Width="100" Height="100" x:CompileBindings="False">
+                        <Image.Source>
+                            <Binding Path="Photo" Converter="{StaticResource ImageConverter}"/>
+                        </Image.Source>
+                    </Image>
+                    <TextBlock Name="FioTB" Text="1234"></TextBlock>
+                    <TextBlock x:CompileBindings="False" Background="White" Foreground="Black" Text="{Binding License}"></TextBlock>
+                </StackPanel>
+            </DataTemplate>
         </ListBox.ItemTemplate>
     </ListBox>
 </UserControl>

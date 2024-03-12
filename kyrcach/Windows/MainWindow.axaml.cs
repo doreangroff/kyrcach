@@ -1,4 +1,7 @@
 using System;
+using System.ComponentModel;
+using System.Diagnostics;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
@@ -7,8 +10,8 @@ using kyrcach.Windows;
 
 namespace kyrcach;
 
-public partial class MainWindow : Window
-{
+public partial class MainWindow : Window {
+
     public MainWindow()
     {
         InitializeComponent();
@@ -48,10 +51,16 @@ public partial class MainWindow : Window
         }
     }
 
-    private void BazaButton(object? sender, RoutedEventArgs e)
-    {
-        Panel.Children.Clear();
-        Baza baza = new Baza();
-        Panel.Children.Add(baza);
+    private void BazaButton(object? sender, RoutedEventArgs e) {
+        Grid.IsVisible = false;
+        Baza.IsVisible = true;
+        // Panel.Children.Clear();
+        // Baza baza = new Baza();
+        // Panel.Children.Add(baza);
+    }
+
+    public void ReturnMainMenu() {
+        Grid.IsVisible = true;
+        Baza.IsVisible = false;
     }
 }

@@ -2,6 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:windows="clr-namespace:kyrcach.Windows"
         mc:Ignorable="d" d:DesignWidth="100" d:DesignHeight="100"
         x:Class="kyrcach.MainWindow"
         WindowStartupLocation="CenterScreen"
@@ -25,41 +26,42 @@
         </Style>
     </Window.Styles>
     <Panel Name="Panel">
-        <Grid RowDefinitions="*, Auto">
-        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0 0 0 20">
-            <TextBlock Name="s1" Opacity="1">
-                <InlineUIContainer>
-                    <Image Source="/Photos/strelka.png" Stretch="Fill" Width="38" Height="38" Margin="0 0 5 0"></Image>
-                </InlineUIContainer>
-            </TextBlock>
-            <Border BorderBrush="Black" BorderThickness="1" Margin="0 0 20 0">
-                <Button Margin="2" Background="Black" Foreground="White" Name="Base" PointerEntered="ButtonOnFocus" Click="BazaButton"
-                        VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="БАЗА ДАННЫХ" VerticalContentAlignment="Center" 
-                        CornerRadius="0"  HorizontalContentAlignment="Center" Padding="5 0 5 0"></Button>
-            </Border>
-            <TextBlock Opacity="0" Name="s2">
-                <InlineUIContainer>
-                    <Image Source="/Photos/strelka.png" Stretch="Fill" Width="38" Height="38" Margin="0 0 5 0"></Image>
-                </InlineUIContainer>
-            </TextBlock>
-            <Border BorderBrush="Black" BorderThickness="1" Margin="0 0 20 0">
-                <Button Margin="2" Background="Black" Foreground="White" Name="Settings" PointerEntered="ButtonOnFocus"
-                        VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="НАСТРОЙКИ" VerticalContentAlignment="Center" 
-                        CornerRadius="0"  HorizontalContentAlignment="Center" Padding="5 0 5 0"></Button>
-            </Border>
-            <TextBlock Opacity="0" Name="s3">
-                <InlineUIContainer>
-                    <Image Source="/Photos/strelka.png" Stretch="Fill" Width="38" Height="38" Margin="0 0 5 0"></Image>
-                </InlineUIContainer>
-            </TextBlock>
-            <Border BorderBrush="Black" BorderThickness="1" Margin="0 0 20 0">
-                <Button Margin="2" Background="Black" Foreground="White" Name="Exit" PointerEntered="ButtonOnFocus"
-                        VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="ВЫХОД" VerticalContentAlignment="Center" 
-                        CornerRadius="0"  HorizontalContentAlignment="Center" Padding="5 0 5 0"
-                        Click="Close"></Button>
-            </Border>
-        </StackPanel>
-    </Grid>
+        <Grid Name="Grid" RowDefinitions="*, Auto">
+            <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0 0 0 20">
+                <TextBlock Name="s1" Opacity="1">
+                    <InlineUIContainer>
+                        <Image Source="/Photos/strelka.png" Stretch="Fill" Width="38" Height="38" Margin="0 0 5 0"></Image>
+                    </InlineUIContainer>
+                </TextBlock>
+                <Border BorderBrush="Black" BorderThickness="1" Margin="0 0 20 0">
+                    <Button Margin="2" Background="Black" Foreground="White" Name="Base" PointerEntered="ButtonOnFocus" Click="BazaButton"
+                            VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="БАЗА ДАННЫХ" VerticalContentAlignment="Center" 
+                            CornerRadius="0"  HorizontalContentAlignment="Center" Padding="5 0 5 0"></Button>
+                </Border>
+                <TextBlock Opacity="0" Name="s2">
+                    <InlineUIContainer>
+                        <Image Source="/Photos/strelka.png" Stretch="Fill" Width="38" Height="38" Margin="0 0 5 0"></Image>
+                    </InlineUIContainer>
+                </TextBlock>
+                <Border BorderBrush="Black" BorderThickness="1" Margin="0 0 20 0">
+                    <Button Margin="2" Background="Black" Foreground="White" Name="Settings" PointerEntered="ButtonOnFocus"
+                            VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="НАСТРОЙКИ" VerticalContentAlignment="Center" 
+                            CornerRadius="0"  HorizontalContentAlignment="Center" Padding="5 0 5 0"></Button>
+                </Border>
+                <TextBlock Opacity="0" Name="s3">
+                    <InlineUIContainer>
+                        <Image Source="/Photos/strelka.png" Stretch="Fill" Width="38" Height="38" Margin="0 0 5 0"></Image>
+                    </InlineUIContainer>
+                </TextBlock>
+                <Border BorderBrush="Black" BorderThickness="1" Margin="0 0 20 0">
+                    <Button Margin="2" Background="Black" Foreground="White" Name="Exit" PointerEntered="ButtonOnFocus"
+                            VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="ВЫХОД" VerticalContentAlignment="Center" 
+                            CornerRadius="0"  HorizontalContentAlignment="Center" Padding="5 0 5 0"
+                            Click="Close"></Button>
+                </Border>
+            </StackPanel>
+        </Grid>
+        <windows:Baza Name="Baza" IsVisible="False"/>
     </Panel>
     
 </Window>

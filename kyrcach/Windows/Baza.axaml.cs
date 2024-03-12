@@ -1,6 +1,7 @@
 using System;
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
@@ -25,11 +26,13 @@ public partial class Baza : UserControl
         Panel.Children.Add(drive);
     }
 
-    private void Back(object? sender, RoutedEventArgs e)
-    {
-        MainWindow main = new MainWindow();
-        main.Show();
+    private void Back(object? sender, RoutedEventArgs e) {
         
+        if (Application.Current.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+        {
+            (desktop.MainWindow as MainWindow).ReturnMainMenu();
+            
+        }
     }
 
     private void CountTables()
