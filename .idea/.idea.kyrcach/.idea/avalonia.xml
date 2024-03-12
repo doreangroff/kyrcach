@@ -5,6 +5,8 @@
       <map>
         <entry key="kyrcach/App.axaml" value="kyrcach/kyrcach.csproj" />
         <entry key="kyrcach/MainWindow.axaml" value="kyrcach/kyrcach.csproj" />
+        <entry key="kyrcach/Windows/Baza.axaml" value="kyrcach/kyrcach.csproj" />
+        <entry key="kyrcach/Windows/DriversWin.axaml" value="kyrcach/kyrcach.csproj" />
         <entry key="kyrcach/Windows/MainWindow.axaml" value="kyrcach/kyrcach.csproj" />
       </map>
     </option>

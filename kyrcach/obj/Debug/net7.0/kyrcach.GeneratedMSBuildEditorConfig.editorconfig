@@ -13,13 +13,16 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = kyrcach
-build_property.ProjectDir = /home/KHPK.RU/student/RiderProjects/kyrcach/kyrcach/
+build_property.ProjectDir = /home/student/RiderProjects/kyrcach/kyrcach/
 
-[/home/KHPK.RU/student/RiderProjects/kyrcach/kyrcach/App.axaml]
+[/home/student/RiderProjects/kyrcach/kyrcach/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/KHPK.RU/student/RiderProjects/kyrcach/kyrcach/Windows/Baza.axaml]
+[/home/student/RiderProjects/kyrcach/kyrcach/Windows/Baza.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/KHPK.RU/student/RiderProjects/kyrcach/kyrcach/Windows/MainWindow.axaml]
+[/home/student/RiderProjects/kyrcach/kyrcach/Windows/DriversWin.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/student/RiderProjects/kyrcach/kyrcach/Windows/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

@@ -12,48 +12,199 @@
             <Setter Property="FontSize" Value="26"></Setter>
             <Setter Property="FontFamily" Value="{StaticResource Omori}"></Setter>
         </Style>
+        <Style Selector="Button">
+            <Setter Property="Background" Value="Black"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="FontSize" Value="26"></Setter>
+            <Setter Property="FontFamily" Value="{StaticResource Omori}"></Setter>
+            <Setter Property="CornerRadius" Value="0 0 0 0 "></Setter>
+            <Setter Property="BorderThickness" Value="1.5"></Setter>
+            <Setter Property="BorderBrush" Value="Transparent"></Setter>
+            <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Background" Value="Black"></Setter>
+                <Setter Property="Foreground" Value="White"></Setter>
+                <Setter Property="BorderBrush" Value="White"></Setter>
+            </Style>
+        </Style>
+        <Style Selector="ListBoxItem:selected /template/ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="Transparent"></Setter>
+        </Style>
+        <Style Selector="ScrollBar[Orientation=Vertical]">
+            <Setter Property="IsVisible" Value="False"/>
+        </Style>
     </UserControl.Styles>
     <Panel Name="Panel">
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
-            <ListBox Name="DriversBaza" DoubleTapped="OpenDriversBaza" Background="Black" BorderBrush="White"
-                     BorderThickness="1.5" Width="550" Height="200">
-                <ListBoxItem Margin="-12, -10, -12, 0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                    <Grid RowDefinitions="Auto, *">
-                        <Grid Grid.Row="0" Height="30">
-                            <Border BorderBrush="White" BorderThickness="1.5">
-                                <TextBlock Text="Водители" Foreground="White" HorizontalAlignment="Stretch"></TextBlock>
-                            </Border>
+        <ScrollViewer VerticalScrollBarVisibility="Hidden">
+            <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="180"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Name="BackButton" Content="Вернуться" BorderBrush="White" VerticalAlignment="Top" 
+                    Click="Back" BorderThickness="3" Margin="10 15 0 0"></Button>
+            <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Right">
+                <ListBox Name="DriversBaza" DoubleTapped="OpenDriversBaza" Background="Black" BorderBrush="White"
+                         BorderThickness="1.5" Width="450" Height="135" Margin="0 15 10 5" 
+                         ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListBoxItem Margin="-12, -10, -12, 0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <Grid RowDefinitions="Auto, *">
+                            <Grid Grid.Row="0" Height="30">
+                                <Border BorderBrush="White" BorderThickness="1.5">
+                                    <TextBlock Text="Водители" Margin="10 0 0 0 " Foreground="White" HorizontalAlignment="Stretch"></TextBlock>
+                                </Border>
+                            </Grid>
+                            <Grid Grid.Row="1" ColumnDefinitions="Auto, *">
+                                <Border HorizontalAlignment="Stretch" Grid.Column="0" BorderBrush="White" BorderThickness="1.5" Width="100" Height="102">
+                                    <Image Stretch="Fill" Height="100" Width="100" VerticalAlignment="Stretch"
+                                          HorizontalAlignment="Left">
+                                    </Image>
+                                </Border>
+                                <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Stretch">
+                                    <Border BorderBrush="White" BorderThickness="1.5">
+                                        <Grid ColumnDefinitions="*, *">
+                                            <TextBlock Grid.Column="0" Text="Название таблицы" HorizontalAlignment="Left" Margin="10 0 0 0"></TextBlock>
+                                            <TextBlock Grid.Column="1" Text="Drivers" HorizontalAlignment="Right" Margin="0 0 10 0"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border BorderBrush="White" BorderThickness="1.5">
+                                        <Grid ColumnDefinitions="*, *">
+                                            <TextBlock Grid.Column="0" Text="Количество записей" HorizontalAlignment="Left" Margin="10 0 0 0 "></TextBlock>
+                                            <TextBlock Grid.Column="1" Name="driversCount" HorizontalAlignment="Right" Margin="0 0 10 0"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border BorderBrush="White" BorderThickness="1.5">
+                                        <Grid ColumnDefinitions="*, *">
+                                            <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="10 0 0 0"></TextBlock>
+                                            <TextBlock Grid.Column="1" HorizontalAlignment="Right" Margin="0 0 10 0"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                </StackPanel>
+                            </Grid>
                         </Grid>
-                        <Grid Grid.Row="1" ColumnDefinitions="Auto, *">
-                            <Border HorizontalAlignment="Stretch" Grid.Column="0" BorderBrush="White" BorderThickness="1.5" Width="100" Height="100">
-                                <Image Stretch="Fill" Source="/Photos/shakal.jpg" Height="100" Width="100" VerticalAlignment="Stretch"
-                                       HorizontalAlignment="Left">
-                                </Image>
-                            </Border>
-                            <StackPanel Background="Blue" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Stretch">
+                    </ListBoxItem>
+                </ListBox>
+                <ListBox Name="DoctorsBaza" DoubleTapped="OpenDriversBaza" Background="Black" BorderBrush="White"
+                         BorderThickness="1.5" Width="450" Height="135" Margin="0 0 10 5"
+                         ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListBoxItem Margin="-12, -10, -12, 0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <Grid RowDefinitions="Auto, *">
+                            <Grid Grid.Row="0" Height="30">
                                 <Border BorderBrush="White" BorderThickness="1.5">
-                                    <Grid ColumnDefinitions="*, *">
-                                        <TextBlock Grid.Column="0" Text="Название таблицы" HorizontalAlignment="Left"></TextBlock>
-                                        <TextBlock Grid.Column="1" Text="Drivers" HorizontalAlignment="Right"></TextBlock>
-                                    </Grid>
+                                    <TextBlock Text="Доктора" Foreground="White" Margin="10 0 0 0 " HorizontalAlignment="Stretch"></TextBlock>
                                 </Border>
-                                <Border BorderBrush="White" BorderThickness="1.5">
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="Количество колонок" HorizontalAlignment="Left"></TextBlock>
-                                        <TextBlock Text="6" HorizontalAlignment="Right"></TextBlock>
-                                    </StackPanel>
+                            </Grid>
+                            <Grid Grid.Row="1" ColumnDefinitions="Auto, *">
+                                <Border HorizontalAlignment="Stretch" Grid.Column="0" BorderBrush="White" BorderThickness="1.5" Width="100" Height="102">
+                                    <Image Stretch="Fill" Height="100" Width="100" VerticalAlignment="Stretch"
+                                          HorizontalAlignment="Left">
+                                    </Image>
                                 </Border>
-                                <Border BorderBrush="White" BorderThickness="1.5">
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="Количество записей" HorizontalAlignment="Left"></TextBlock>
-                                        <TextBlock Text="0" HorizontalAlignment="Right"></TextBlock>
-                                    </StackPanel>
-                                </Border>
-                            </StackPanel>
+                                <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Stretch">
+                                    <Border BorderBrush="White" BorderThickness="1.5">
+                                        <Grid ColumnDefinitions="*, *">
+                                            <TextBlock Grid.Column="0" Text="Название таблицы" HorizontalAlignment="Left" Margin="10 0 0 0"></TextBlock>
+                                            <TextBlock Grid.Column="1" Text="Doctors" HorizontalAlignment="Right" Margin="0 0 10 0"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border BorderBrush="White" BorderThickness="1.5">
+                                        <Grid ColumnDefinitions="*, *">
+                                            <TextBlock Grid.Column="0" Text="Количество записей" HorizontalAlignment="Left" Margin="10 0 0 0 "></TextBlock>
+                                            <TextBlock Grid.Column="1" Name="doctorsCount" HorizontalAlignment="Right" Margin="0 0 10 0"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border BorderBrush="White" BorderThickness="1.5">
+                                        <Grid ColumnDefinitions="*, *">
+                                            <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="10 0 0 0"></TextBlock>
+                                            <TextBlock Grid.Column="1" HorizontalAlignment="Right" Margin="0 0 10 0"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                </StackPanel>
+                            </Grid>
                         </Grid>
-                    </Grid>
-                </ListBoxItem>
-            </ListBox>
-        </StackPanel>
+                    </ListBoxItem>
+                </ListBox>
+                <ListBox Name="CentersBaza" DoubleTapped="OpenDriversBaza" Background="Black" BorderBrush="White"
+                         BorderThickness="1.5" Width="450" Height="135" Margin="0 0 10 5"
+                         ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListBoxItem Margin="-12, -10, -12, 0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <Grid RowDefinitions="Auto, *">
+                            <Grid Grid.Row="0" Height="30">
+                                <Border BorderBrush="White" BorderThickness="1.5">
+                                    <TextBlock Text="Медицинские центры" Foreground="White" Margin="10 0 0 0 " HorizontalAlignment="Stretch"></TextBlock>
+                                </Border>
+                            </Grid>
+                            <Grid Grid.Row="1" ColumnDefinitions="Auto, *">
+                                <Border HorizontalAlignment="Stretch" Grid.Column="0" BorderBrush="White" BorderThickness="1.5" Width="100" Height="102">
+                                    <Image Stretch="Fill" Height="100" Width="100" VerticalAlignment="Stretch"
+                                          HorizontalAlignment="Left">
+                                    </Image>
+                                </Border>
+                                <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Stretch">
+                                    <Border BorderBrush="White" BorderThickness="1.5">
+                                        <Grid ColumnDefinitions="*, *">
+                                            <TextBlock Grid.Column="0" Text="Название таблицы" HorizontalAlignment="Left" Margin="10 0 0 0"></TextBlock>
+                                            <TextBlock Grid.Column="1" Text="medCenters" HorizontalAlignment="Right" Margin="0 0 10 0"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border BorderBrush="White" BorderThickness="1.5">
+                                        <Grid ColumnDefinitions="*, *">
+                                            <TextBlock Grid.Column="0" Text="Количество записей" HorizontalAlignment="Left" Margin="10 0 0 0 "></TextBlock>
+                                            <TextBlock Grid.Column="1" Name="centersCount" HorizontalAlignment="Right" Margin="0 0 10 0"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border BorderBrush="White" BorderThickness="1.5">
+                                        <Grid ColumnDefinitions="*, *">
+                                            <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="10 0 0 0"></TextBlock>
+                                            <TextBlock Grid.Column="1" HorizontalAlignment="Right" Margin="0 0 10 0"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                    </ListBoxItem>
+                </ListBox>
+                <ListBox Name="Examsbaza" DoubleTapped="OpenDriversBaza" Background="Black" BorderBrush="White"
+                         BorderThickness="1.5" Width="450" Height="135" Margin="0 0 10 5"
+                         ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListBoxItem Margin="-12, -10, -12, 0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <Grid RowDefinitions="Auto, *">
+                            <Grid Grid.Row="0" Height="30">
+                                <Border BorderBrush="White" BorderThickness="1.5">
+                                    <TextBlock Text="Медицинские осмотры" Foreground="White" Margin="10 0 0 0 " HorizontalAlignment="Stretch"></TextBlock>
+                                </Border>
+                            </Grid>
+                            <Grid Grid.Row="1" ColumnDefinitions="Auto, *">
+                                <Border HorizontalAlignment="Stretch" Grid.Column="0" BorderBrush="White" BorderThickness="1.5" Width="100" Height="102">
+                                    <Image Stretch="Fill" Height="100" Width="100" VerticalAlignment="Stretch"
+                                          HorizontalAlignment="Left">
+                                    </Image>
+                                </Border>
+                                <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Stretch">
+                                    <Border BorderBrush="White" BorderThickness="1.5">
+                                        <Grid ColumnDefinitions="*, *">
+                                            <TextBlock Grid.Column="0" Text="Название таблицы" HorizontalAlignment="Left" Margin="10 0 0 0"></TextBlock>
+                                            <TextBlock Grid.Column="1" Text="Examinations" HorizontalAlignment="Right" Margin="0 0 10 0"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border BorderBrush="White" BorderThickness="1.5">
+                                        <Grid ColumnDefinitions="*, *">
+                                            <TextBlock Grid.Column="0" Text="Количество записей" HorizontalAlignment="Left" Margin="10 0 0 0 "></TextBlock>
+                                            <TextBlock Grid.Column="1" Name="examsCount" HorizontalAlignment="Right" Margin="0 0 10 0"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border BorderBrush="White" BorderThickness="1.5">
+                                        <Grid ColumnDefinitions="*, *">
+                                            <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="10 0 0 0"></TextBlock>
+                                            <TextBlock Grid.Column="1" HorizontalAlignment="Right" Margin="0 0 10 0"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                    </ListBoxItem>
+                </ListBox>
+            </StackPanel>
+        </Grid>
+        </ScrollViewer>
     </Panel>
 </UserControl>
