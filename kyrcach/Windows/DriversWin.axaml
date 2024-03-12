@@ -11,19 +11,34 @@
     <UserControl.Resources>
         <entitites:ImageConverter x:Key="ImageConverter" />
     </UserControl.Resources>
-    <ListBox Name="DriverLBox">
-        <ListBox.ItemTemplate>
-            <DataTemplate DataType="entitites:Driver">
-                <StackPanel Orientation="Vertical">
-                    <Image Stretch="UniformToFill" Width="100" Height="100" x:CompileBindings="False">
-                        <Image.Source>
-                            <Binding Path="Photo" Converter="{StaticResource ImageConverter}"/>
-                        </Image.Source>
-                    </Image>
-                    <TextBlock Name="FioTB" Text="1234"></TextBlock>
-                    <TextBlock x:CompileBindings="False" Background="White" Foreground="Black" Text="{Binding License}"></TextBlock>
+    <Panel Name="Panel">
+        <DockPanel>
+            <Border BorderBrush="Black" BorderThickness="3">
+                <StackPanel DockPanel.Dock="Top" Background="Blue" Orientation="Horizontal" Width="640">
+                    <Button Name="backBtn" Content=" ⬅" Margin="5" />
+                    <Button Name="addBtn" Content="Добавить" Margin="5" />
+                    <Button Name="editBtn" Content="Изменить" Margin="5" />
+                    <Button Name="delBtn" Content="Удалить" Margin="5" />
+                    <TextBox Name="searchTb" Width="100" Height="10" Margin="5" />
                 </StackPanel>
-            </DataTemplate>
-        </ListBox.ItemTemplate>
-    </ListBox>
+            </Border>
+            <ListBox Name="DriverLBox" Width="200" Height="150">
+                <ListBox.ItemTemplate>
+                    <DataTemplate DataType="entitites:Driver">
+                        <StackPanel Orientation="Vertical">
+                            <Image Stretch="UniformToFill" Width="100" Height="100" x:CompileBindings="False">
+                                <Image.Source>
+                                    <Binding Path="Photo" Converter="{StaticResource ImageConverter}" />
+                                </Image.Source>
+                            </Image>
+                            <TextBlock Name="FioTB" Text="1234"></TextBlock>
+                            <TextBlock x:CompileBindings="False" Background="White" Foreground="Black"
+                                       Text="{Binding License}">
+                            </TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </DockPanel>
+    </Panel>
 </UserControl>
