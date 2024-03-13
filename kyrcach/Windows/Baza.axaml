@@ -55,7 +55,7 @@
                             </Grid>
                             <Grid Grid.Row="1" ColumnDefinitions="Auto, *">
                                 <Border HorizontalAlignment="Stretch" Grid.Column="0" BorderBrush="White" BorderThickness="1.5" Width="100" Height="102">
-                                    <Image Stretch="Fill" Height="100" Width="100" VerticalAlignment="Stretch"
+                                    <Image Stretch="UniformToFill" Height="100" Width="96" VerticalAlignment="Stretch" Source="/Photos/abobus.jpg"
                                           HorizontalAlignment="Left">
                                     </Image>
                                 </Border>

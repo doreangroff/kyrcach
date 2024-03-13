@@ -8,4 +8,5 @@ public class Driver
     public string surNmae { get; set; }
     public byte[]? Photo { get; set; }
     public string License { get; set; }
+    public string Fullname => $"{LastName} {DriverName} {surNmae}";
 }

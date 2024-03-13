@@ -31,6 +31,11 @@
       <None Remove="Photos\bus.ico" />
       <None Remove="Photos\shakal.jpg" />
       <AvaloniaResource Include="Photos\shakal.jpg" />
+      <AvaloniaResource Include="Photos\abobus.jpg" />
+      <None Remove="Photos\гослинг.jpg" />
+      <AvaloniaResource Include="Photos\гослинг.jpg" />
+      <None Remove="Photos\abobus.jpg" />
+      <AvaloniaResource Include="Photos\abobus.jpg" />
     </ItemGroup>
 
 

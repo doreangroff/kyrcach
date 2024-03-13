@@ -2,6 +2,7 @@ using System;
 using System.Collections.ObjectModel;
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using kyrcach.Entities;
 using MySqlConnector;
@@ -35,5 +36,12 @@ public partial class DriversWin : UserControl
         }
         _db.CloseConnection();
         DriverLBox.ItemsSource = _drivers;
+    }
+
+    private void Back(object? sender, RoutedEventArgs e)
+    {
+       Panel.Children.Clear();
+       Baza baza = new Baza();
+       Panel.Children.Add(baza);
     }
 }

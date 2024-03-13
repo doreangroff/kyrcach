@@ -11,28 +11,54 @@
     <UserControl.Resources>
         <entitites:ImageConverter x:Key="ImageConverter" />
     </UserControl.Resources>
+    <UserControl.Styles>
+        <Style Selector="Button">
+            <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Background" Value="Black"></Setter>
+                <Setter Property="Foreground" Value="White"></Setter>
+                <Setter Property="BorderBrush" Value="Black"></Setter>
+            </Style>
+        </Style>
+        <Style Selector="TextBox">
+            <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Background" Value="Black"></Setter>
+            </Style>
+        </Style>
+        <Style Selector="ListBoxItem:selected /template/ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="Transparent"></Setter>
+        </Style>
+        <Style Selector="TextBlock">
+            <Setter Property="FontSize" Value="26"></Setter>
+            <Setter Property="FontFamily" Value="{StaticResource Omori}"></Setter>
+        </Style>
+    </UserControl.Styles>
     <Grid RowDefinitions="Auto, *" Name="Panel">
-        <Border Grid.Row="0" BorderBrush="Black" BorderThickness="3">
-            <StackPanel DockPanel.Dock="Top" Background="White" Orientation="Horizontal" Height="50" Width="640">
-                <Button Name="backBtn" Content="⬅" Margin="5" />
+        <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1" Margin="13 5 12 0">
+            <StackPanel DockPanel.Dock="Top" Background="Black" Orientation="Horizontal" Height="50" Width="640" Margin="3">
+                <Button Name="backBtn" Content="⬅" Margin="0 5 5 5" Click="Back"/>
                 <Button Name="addBtn" Content="Добавить" Margin="5" />
                 <Button Name="editBtn" Content="Изменить" Margin="5" />
                 <Button Name="delBtn" Content="Удалить" Margin="5" />
-                <TextBox Name="searchTb" Width="200" Watermark="Поиск" Margin="5" />
+                <TextBox Name="searchTb" Width="200" Watermark="Поиск" Background="Black" Margin="5 5 0 5" />
             </StackPanel>
         </Border>
-        <ListBox HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Grid.Row="1" Name="DriverLBox" Height="250">
+        <ListBox HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="White" Grid.Row="1" Name="DriverLBox" Height="240" Margin="-5 -10 -10 -10">
             <ListBox.ItemTemplate>
                 <DataTemplate DataType="entitites:Driver">
                     <StackPanel Orientation="Vertical">
-                        <Image Stretch="UniformToFill" Width="150" Height="150" x:CompileBindings="False">
-                            <Image.Source>
-                                <Binding Path="Photo" Converter="{StaticResource ImageConverter}" />
-                            </Image.Source>
-                        </Image>
-                        <TextBlock Name="FioTB" Text="1234"></TextBlock>
-                        <TextBlock x:CompileBindings="False" Background="White" Foreground="Black"
-                                   Text="{Binding License}">
+                        <Border BorderBrush="Black" BorderThickness="1.5">
+                            <Image Stretch="UniformToFill" Width="200" Height="150" x:CompileBindings="False">
+                                <Image.Source>
+                                    <Binding Path="Photo" Converter="{StaticResource ImageConverter}" />
+                                </Image.Source>
+                            </Image>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="1.5">
+                            <TextBlock x:CompileBindings="False" Background="#DEDEDE" Foreground="Black" 
+                                       Text="{Binding Fullname}" Padding="5 0 0 0"></TextBlock>
+                        </Border>
+                        <TextBlock x:CompileBindings="False" Background="Black" Foreground="White" 
+                                   Text="{Binding License}" Padding="5 0 0 0 ">
                         </TextBlock>
                     </StackPanel>
                 </DataTemplate>
