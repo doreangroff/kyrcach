@@ -43,10 +43,10 @@
             <Button Name="BackButton" Content="Вернуться" BorderBrush="White" VerticalAlignment="Top" 
                     Click="Back" BorderThickness="3" Margin="10 15 0 0"></Button>
             <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Right">
-                <ListBox Name="DriversBaza" DoubleTapped="OpenDriversBaza" Background="Black" BorderBrush="White"
+                <ListBox  Name="DriversBaza" DoubleTapped="OpenDriversBaza" Background="Black" BorderBrush="White"
                          BorderThickness="1.5" Width="450" Height="135" Margin="0 15 10 5" 
                          ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                    <ListBoxItem Margin="-12, -10, -12, 0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <ListBoxItem Margin="-12, -10, -12, -12" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                         <Grid RowDefinitions="Auto, *">
                             <Grid Grid.Row="0" Height="30">
                                 <Border BorderBrush="White" BorderThickness="1.5">
@@ -86,7 +86,7 @@
                 <ListBox Name="DoctorsBaza" DoubleTapped="OpenDriversBaza" Background="Black" BorderBrush="White"
                          BorderThickness="1.5" Width="450" Height="135" Margin="0 0 10 5"
                          ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                    <ListBoxItem Margin="-12, -10, -12, 0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <ListBoxItem Margin="-12, -10, -12, -12" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                         <Grid RowDefinitions="Auto, *">
                             <Grid Grid.Row="0" Height="30">
                                 <Border BorderBrush="White" BorderThickness="1.5">
@@ -126,7 +126,7 @@
                 <ListBox Name="CentersBaza" DoubleTapped="OpenDriversBaza" Background="Black" BorderBrush="White"
                          BorderThickness="1.5" Width="450" Height="135" Margin="0 0 10 5"
                          ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                    <ListBoxItem Margin="-12, -10, -12, 0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <ListBoxItem Margin="-12, -10, -12, -12" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                         <Grid RowDefinitions="Auto, *">
                             <Grid Grid.Row="0" Height="30">
                                 <Border BorderBrush="White" BorderThickness="1.5">
@@ -166,7 +166,7 @@
                 <ListBox Name="Examsbaza" DoubleTapped="OpenDriversBaza" Background="Black" BorderBrush="White"
                          BorderThickness="1.5" Width="450" Height="135" Margin="0 0 10 5"
                          ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                    <ListBoxItem Margin="-12, -10, -12, 0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <ListBoxItem Margin="-12, -10, -12, -12" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                         <Grid RowDefinitions="Auto, *">
                             <Grid Grid.Row="0" Height="30">
                                 <Border BorderBrush="White" BorderThickness="1.5">

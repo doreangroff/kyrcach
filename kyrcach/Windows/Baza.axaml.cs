@@ -52,4 +52,9 @@ public partial class Baza : UserControl
         examsCount.Text = command4.ExecuteScalar().ToString();
 
     }
+
+    private void InputElement_OnPointerWheelChanged(object? sender, PointerWheelEventArgs e) 
+    {
+        e.Handled = true;
+    }
 }
