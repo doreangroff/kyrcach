@@ -3,8 +3,21 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="kyrcach.Windows.AddDriver">
+             x:Class="kyrcach.Windows.AddDriver"
+             Width="675"
+             Height="480">
     <UserControl.Styles>
+        <Style Selector="Button.avatar">
+            <Setter Property="BorderBrush" Value="White"></Setter>
+            <Style Selector="^:pointerover">
+                <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+                    <Setter Property="Background">
+                        <ImageBrush Source="/Photos/avatar.jpg" Stretch="UniformToFill"></ImageBrush>
+                    </Setter>
+                    <Setter Property="BorderBrush" Value="White"></Setter>
+                </Style>
+            </Style>
+        </Style>
         <Style Selector="TextBlock">
             <Setter Property="Foreground" Value="White"></Setter>
             <Setter Property="FontSize" Value="26"></Setter>
@@ -17,6 +30,37 @@
             <Setter Property="CornerRadius" Value="0"></Setter>
             <Setter Property="Height" Value="40"></Setter>
             <Setter Property="Width" Value="150"></Setter>
+            <Setter Property="FontSize" Value="26"></Setter>
+            <Setter Property="FontFamily" Value="{StaticResource Omori}"></Setter>
+        </Style>
+        <Style Selector="Button.ishaq">
+            <Style Selector="^:pointerover">
+                <Setter Property="RenderTransform" Value="scale(0.97)"></Setter>
+            </Style>
+            <Setter Property="Background" Value="Black"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="FontSize" Value="26"></Setter>
+            <Setter Property="FontFamily" Value="{StaticResource Omori}"></Setter>
+            <Setter Property="CornerRadius" Value="0 0 0 0 "></Setter>
+            <Setter Property="BorderThickness" Value="3"></Setter>
+            <Setter Property="BorderBrush" Value="Transparent"></Setter>
+            <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Background" Value="Black"></Setter>
+                <Setter Property="Foreground" Value="White"></Setter>
+            </Style>
+        </Style>
+        <Style Selector="TextBox">
+            <Style Selector="^:pointerover /template/ Border#PART_BorderElement">
+                <Setter Property="Background" Value="Transparent"></Setter>
+                <Setter Property="BorderBrush" Value="White"></Setter>
+            </Style>
+            <Style Selector="^:selected /template/ Border#PART_BorderElement">
+                <Setter Property="Background" Value="Transparent"></Setter>
+            </Style>
+            <Style Selector="^:focus /template/ Border#PART_BorderElement">
+                <Setter Property="Background" Value="Transparent"></Setter>
+                <Setter Property="BorderBrush" Value="White"></Setter>
+            </Style>
         </Style>
     </UserControl.Styles>
     <Panel Name="Panel">
@@ -34,23 +78,32 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">ФАМИЛИЯ</TextBlock>
-            <TextBox Grid.Column="1" Name="LastNameTB"  HorizontalAlignment="Left" Watermark="Иванов"></TextBox>
+            <TextBox Grid.Column="1" Name="LastNameTB"  HorizontalAlignment="Left" Watermark="Иванов" Foreground="White"></TextBox>
             <TextBlock Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">ИМЯ</TextBlock>
-            <TextBox Grid.Row="1" Grid.Column="1" Name="NameTB"  HorizontalAlignment="Left" Watermark="Иван"></TextBox>
+            <TextBox Grid.Row="1" Grid.Column="1" Name="NameTB"  HorizontalAlignment="Left" Watermark="Иван" Foreground="White"></TextBox>
             <TextBlock Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">ОТЧЕСТВО</TextBlock>
-            <TextBox Grid.Row="2" Grid.Column="1" Name="SurNameTb"  HorizontalAlignment="Left" Watermark="Иванович"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="1" Name="SurNameTb"  HorizontalAlignment="Left" Watermark="Иванович" Foreground="White"></TextBox>
             <TextBlock Grid.Row="3" VerticalAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center">ВОДИТЕЛЬСКОЕ УДОСТОВЕРЕНИЕ</TextBlock>
-            <TextBox Grid.Row="3" Grid.Column="1" Name="LiecenseTB" HorizontalAlignment="Left" Watermark="1234567890"></TextBox>
-            <TextBlock Grid.Column="2" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">ФОТОГРАФИЯ</TextBlock>
-            <Button Grid.Row="1" Grid.Column="2" Width="200" Height="150" Name="PhotoBtn" HorizontalAlignment="Center" Background="Transparent">
-                <StackPanel>
-                    <Image Source="/Photos/avatar.jpg"></Image>
-                </StackPanel>
+            <TextBox Grid.Row="3" Grid.Column="1" Name="LiecenseTB" HorizontalAlignment="Left" Watermark="1234567890" Foreground="White"></TextBox>
+            <TextBlock Grid.Column="2" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 30 0">ФОТОГРАФИЯ</TextBlock>
+            <Button Grid.Row="1" Grid.Column="2" Width="200" Height="150" Name="PhotoBtn" HorizontalAlignment="Center"  Margin="0 0 30 0"
+                    BorderBrush="White" BorderThickness="1.5" Classes="avatar">
+                <Button.Background>
+                    <ImageBrush Source="/Photos/avatar.jpg" Stretch="UniformToFill"></ImageBrush>
+                </Button.Background>
             </Button>
             <StackPanel Grid.Row="4" Grid.Column="0" Background="White" Width="500"></StackPanel>
-            <StackPanel HorizontalAlignment="Center" Grid.Row="4" Grid.Column="1" Spacing="10" Orientation="Horizontal" Background="White" Margin="70 0 0 0">
-                <Button Name="AddButton" Content="Добавить"></Button>
-                <Button Name="BackButton" Content="Вернуться" ></Button>
+            <StackPanel HorizontalAlignment="Center" Grid.Row="4" Grid.Column="1" Spacing="10" Orientation="Horizontal" Background="White" Margin="40 0 0 0">
+                <Border BorderBrush="Black" BorderThickness="1" Margin="0 0 20 0" Height="50">
+                    <Button Classes="ishaq" Margin="3" Background="Black" Foreground="White" Name="AddBtn" 
+                            VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="ДОБАВИТЬ" VerticalContentAlignment="Center" 
+                            CornerRadius="0"   HorizontalContentAlignment="Center" Padding="5 0 5 0" ></Button>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" Margin="0 0 20 0" Height="50">
+                    <Button Classes="ishaq" Margin="3" Background="Black" Foreground="White" Name="BackBtn" 
+                            VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="ВЕРНУТЬСЯ" VerticalContentAlignment="Center" 
+                            CornerRadius="0"  HorizontalContentAlignment="Center" Padding="5 0 5 0" ></Button>
+                </Border>
             </StackPanel>
             <StackPanel Grid.Row="4" Grid.Column="2" Background="White" Width="250"></StackPanel>
         </Grid>

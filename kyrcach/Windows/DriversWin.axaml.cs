@@ -50,6 +50,8 @@ public partial class DriversWin : UserControl
     {
         var seacrhDriver = _drivers.Where(x =>
             x.DriverName.Contains(searchTb.Text, StringComparison.OrdinalIgnoreCase) ||
+            x.LastName.Contains(searchTb.Text, StringComparison.OrdinalIgnoreCase) ||
+            x.surNmae.Contains(searchTb.Text, StringComparison.OrdinalIgnoreCase) ||
             x.License.Contains(searchTb.Text, StringComparison.OrdinalIgnoreCase)).ToList();
         DriverLBox.ItemsSource = seacrhDriver;
     }

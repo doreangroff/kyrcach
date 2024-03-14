@@ -12,20 +12,7 @@
             <Setter Property="FontSize" Value="26"></Setter>
             <Setter Property="FontFamily" Value="{StaticResource Omori}"></Setter>
         </Style>
-        <Style Selector="Button">
-            <Setter Property="Background" Value="Black"></Setter>
-            <Setter Property="Foreground" Value="White"></Setter>
-            <Setter Property="FontSize" Value="26"></Setter>
-            <Setter Property="FontFamily" Value="{StaticResource Omori}"></Setter>
-            <Setter Property="CornerRadius" Value="0 0 0 0 "></Setter>
-            <Setter Property="BorderThickness" Value="1.5"></Setter>
-            <Setter Property="BorderBrush" Value="Transparent"></Setter>
-            <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-                <Setter Property="Background" Value="Black"></Setter>
-                <Setter Property="Foreground" Value="White"></Setter>
-                <Setter Property="BorderBrush" Value="White"></Setter>
-            </Style>
-        </Style>
+
         <Style Selector="ListBoxItem:selected /template/ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="Transparent"></Setter>
         </Style>
