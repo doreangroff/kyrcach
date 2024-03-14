@@ -36,6 +36,8 @@
       <AvaloniaResource Include="Photos\гослинг.jpg" />
       <None Remove="Photos\abobus.jpg" />
       <AvaloniaResource Include="Photos\abobus.jpg" />
+      <None Remove="Photos\avatar.jpg" />
+      <AvaloniaResource Include="Photos\avatar.jpg" />
     </ItemGroup>
 
 

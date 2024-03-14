@@ -1,0 +1,58 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="kyrcach.Windows.AddDriver">
+    <UserControl.Styles>
+        <Style Selector="TextBlock">
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="FontSize" Value="26"></Setter>
+        </Style>
+        <Style Selector="TextBox">
+            <Setter Property="Background" Value="Black"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="BorderBrush" Value="White"></Setter>
+            <Setter Property="BorderThickness" Value="1.5"></Setter>
+            <Setter Property="CornerRadius" Value="0"></Setter>
+            <Setter Property="Height" Value="40"></Setter>
+            <Setter Property="Width" Value="150"></Setter>
+        </Style>
+    </UserControl.Styles>
+    <Panel Name="Panel">
+        <Grid Background="Black">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">ФАМИЛИЯ</TextBlock>
+            <TextBox Grid.Column="1" Name="LastNameTB"  HorizontalAlignment="Left" Watermark="Иванов"></TextBox>
+            <TextBlock Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">ИМЯ</TextBlock>
+            <TextBox Grid.Row="1" Grid.Column="1" Name="NameTB"  HorizontalAlignment="Left" Watermark="Иван"></TextBox>
+            <TextBlock Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">ОТЧЕСТВО</TextBlock>
+            <TextBox Grid.Row="2" Grid.Column="1" Name="SurNameTb"  HorizontalAlignment="Left" Watermark="Иванович"></TextBox>
+            <TextBlock Grid.Row="3" VerticalAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center">ВОДИТЕЛЬСКОЕ УДОСТОВЕРЕНИЕ</TextBlock>
+            <TextBox Grid.Row="3" Grid.Column="1" Name="LiecenseTB" HorizontalAlignment="Left" Watermark="1234567890"></TextBox>
+            <TextBlock Grid.Column="2" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">ФОТОГРАФИЯ</TextBlock>
+            <Button Grid.Row="1" Grid.Column="2" Width="200" Height="150" Name="PhotoBtn" HorizontalAlignment="Center" Background="Transparent">
+                <StackPanel>
+                    <Image Source="/Photos/avatar.jpg"></Image>
+                </StackPanel>
+            </Button>
+            <StackPanel Grid.Row="4" Grid.Column="0" Background="White" Width="500"></StackPanel>
+            <StackPanel HorizontalAlignment="Center" Grid.Row="4" Grid.Column="1" Spacing="10" Orientation="Horizontal" Background="White" Margin="70 0 0 0">
+                <Button Name="AddButton" Content="Добавить"></Button>
+                <Button Name="BackButton" Content="Вернуться" ></Button>
+            </StackPanel>
+            <StackPanel Grid.Row="4" Grid.Column="2" Background="White" Width="250"></StackPanel>
+        </Grid>
+    </Panel>
+</UserControl>

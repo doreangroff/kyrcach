@@ -1,5 +1,6 @@
 using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
@@ -43,5 +44,20 @@ public partial class DriversWin : UserControl
        Panel.Children.Clear();
        Baza baza = new Baza();
        Panel.Children.Add(baza);
+    }
+
+    private void SeacrhDriver(object? sender, TextChangedEventArgs e)
+    {
+        var seacrhDriver = _drivers.Where(x =>
+            x.DriverName.Contains(searchTb.Text, StringComparison.OrdinalIgnoreCase) ||
+            x.License.Contains(searchTb.Text, StringComparison.OrdinalIgnoreCase)).ToList();
+        DriverLBox.ItemsSource = seacrhDriver;
+    }
+
+    private void AddDriver(object? sender, RoutedEventArgs e)
+    {
+        Windows.AddDriver add = new AddDriver();
+        Panel.Children.Clear();
+        Panel.Children.Add(add);
     }
 }
