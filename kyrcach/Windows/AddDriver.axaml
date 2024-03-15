@@ -87,7 +87,7 @@
             <TextBox Grid.Row="3" Grid.Column="1" Name="LiecenseTB" HorizontalAlignment="Left" Watermark="1234567890" Foreground="White"></TextBox>
             <TextBlock Grid.Column="2" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 30 0">ФОТОГРАФИЯ</TextBlock>
             <Button Grid.Row="1" Grid.Column="2" Width="200" Height="150" Name="PhotoBtn" HorizontalAlignment="Center"  Margin="0 0 30 0"
-                    BorderBrush="White" BorderThickness="1.5" Classes="avatar">
+                    BorderBrush="White" BorderThickness="1.5" Classes="avatar" Click="DriverPhoto">
                 <Button.Background>
                     <ImageBrush Source="/Photos/avatar.jpg" Stretch="UniformToFill"></ImageBrush>
                 </Button.Background>
@@ -95,13 +95,13 @@
             <StackPanel Grid.Row="4" Grid.Column="0" Background="White" Width="500"></StackPanel>
             <StackPanel HorizontalAlignment="Center" Grid.Row="4" Grid.Column="1" Spacing="10" Orientation="Horizontal" Background="White" Margin="40 0 0 0">
                 <Border BorderBrush="Black" BorderThickness="1" Margin="0 0 20 0" Height="50">
-                    <Button Classes="ishaq" Margin="3" Background="Black" Foreground="White" Name="AddBtn" 
+                    <Button Classes="ishaq" Margin="3" Background="Black" Foreground="White" Name="AddBtn" Click="TinyVGashne"
                             VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="ДОБАВИТЬ" VerticalContentAlignment="Center" 
                             CornerRadius="0"   HorizontalContentAlignment="Center" Padding="5 0 5 0" ></Button>
                 </Border>
                 <Border BorderBrush="Black" BorderThickness="1" Margin="0 0 20 0" Height="50">
                     <Button Classes="ishaq" Margin="3" Background="Black" Foreground="White" Name="BackBtn" 
-                            VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="ВЕРНУТЬСЯ" VerticalContentAlignment="Center" 
+                            VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="ВЕРНУТЬСЯ" VerticalContentAlignment="Center" Click="BackBtn_OnClick"
                             CornerRadius="0"  HorizontalContentAlignment="Center" Padding="5 0 5 0" ></Button>
                 </Border>
             </StackPanel>

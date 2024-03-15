@@ -61,5 +61,6 @@ public partial class DriversWin : UserControl
         Windows.AddDriver add = new AddDriver();
         Panel.Children.Clear();
         Panel.Children.Add(add);
+        add.onClosing += delegate { ShowDrivers(); };
     }
 }

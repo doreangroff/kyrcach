@@ -12,7 +12,13 @@
             <Setter Property="FontSize" Value="26"></Setter>
             <Setter Property="FontFamily" Value="{StaticResource Omori}"></Setter>
         </Style>
-
+        <Style Selector="Button">
+            <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Background" Value="Black"></Setter>
+                <Setter Property="Foreground" Value="White"></Setter>
+                <Setter Property="BorderBrush" Value="White"></Setter>
+            </Style>
+        </Style>
         <Style Selector="ListBoxItem:selected /template/ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="Transparent"></Setter>
         </Style>

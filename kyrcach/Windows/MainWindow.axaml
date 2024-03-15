@@ -44,7 +44,7 @@
                     </InlineUIContainer>
                 </TextBlock>
                 <Border BorderBrush="Black" BorderThickness="1" Margin="0 0 20 0">
-                    <Button Margin="3" Background="Black" Foreground="White" Name="Settings" PointerEntered="ButtonOnFocus"
+                    <Button Margin="3" Background="Black" Foreground="White" Name="Settings" PointerEntered="ButtonOnFocus" Click="OpenMessage"
                             VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="НАСТРОЙКИ" VerticalContentAlignment="Center" 
                             CornerRadius="0"  HorizontalContentAlignment="Center" Padding="5 0 5 0"></Button>
                 </Border>

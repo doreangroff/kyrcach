@@ -10,11 +10,17 @@ using kyrcach.Windows;
 
 namespace kyrcach;
 
-public partial class MainWindow : Window {
+public partial class MainWindow : Window
+{
+    public static Window instance;
 
     public MainWindow()
     {
         InitializeComponent();
+        if (instance == null)
+        {
+            instance = this;
+        }
     }
 
     private void Close(object? sender, RoutedEventArgs e)
@@ -54,13 +60,16 @@ public partial class MainWindow : Window {
     private void BazaButton(object? sender, RoutedEventArgs e) {
         Grid.IsVisible = false;
         Baza.IsVisible = true;
-        // Panel.Children.Clear();
-        // Baza baza = new Baza();
-        // Panel.Children.Add(baza);
     }
 
     public void ReturnMainMenu() {
         Grid.IsVisible = true;
         Baza.IsVisible = false;
+    }
+
+    private void OpenMessage(object? sender, RoutedEventArgs e)
+    {
+        MessageBox mes = new MessageBox();
+        mes.ShowDialog(this);
     }
 }
