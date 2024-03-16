@@ -40,6 +40,8 @@
       <AvaloniaResource Include="Photos\avatar.jpg" />
       <None Remove="Photos\exclamation.ico" />
       <AvaloniaResource Include="Photos\sigma.ico" />
+      <None Remove="Photos\SinShluhi.jpg" />
+      <AvaloniaResource Include="Photos\SinShluhi.jpg" />
     </ItemGroup>
 
 
