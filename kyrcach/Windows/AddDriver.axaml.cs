@@ -58,10 +58,10 @@ public partial class AddDriver : UserControl
             command.Parameters["@liecense"].Value = LiecenseTB.Text;
             command.ExecuteNonQuery();
             _db.CloseConnection();
-            onClosing.Invoke();
             Panel.Children.Clear();
             DriversWin drivers = new DriversWin();
             Panel.Children.Add(drivers);
+            onClosing.Invoke();
         }
         catch (Exception exception)
         {
@@ -81,20 +81,24 @@ public partial class AddDriver : UserControl
             Title = "Выберите изображение",
             AllowMultiple = false
         });
+        
         if (files.Count >= 1)
         {
+            
             var imageStream = await files[0].OpenReadAsync();
             bitmap = new Bitmap(imageStream);
             PhotoBtn.Background = new ImageBrush(bitmap);
-                //_imageBytes = await ConvertStreamToBytesAsync(imageStream); 
+            using var binaryReader = new BinaryReader(imageStream);
+            Console.WriteLine("BIRIDER = " + binaryReader.BaseStream.Length);
+            _imageBytes = ImageToByteArray(bitmap);
         }
     }
-    private async Task<byte[]> ConvertStreamToBytesAsync(Stream stream)
+    public byte[] ImageToByteArray(Bitmap image)
     {
-        using (MemoryStream memoryStream = new MemoryStream())
+        using (MemoryStream stream = new MemoryStream())
         {
-            await stream.CopyToAsync(memoryStream);
-            return memoryStream.ToArray();
+            image.Save(stream);
+            return(stream.ToArray());
         }
     }
 }

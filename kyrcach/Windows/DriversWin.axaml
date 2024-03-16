@@ -53,15 +53,14 @@
                          Margin="5 5 0 5" FontFamily="{StaticResource Omori}" />
             </StackPanel>
         </Border>
-        <ListBox HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="White" Grid.Row="1" Name="DriverLBox" Height="240" Margin="-5 -10 -10 -10">
+             <ScrollViewer Grid.Row="1" AllowAutoHide="False" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Visible">
+        <ListBox HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="White" Grid.Row="1" Name="DriverLBox" Height="240" Margin="-5 -10 -10 10">
             <ListBox.ItemTemplate>
                 <DataTemplate DataType="entitites:Driver">
-                    <StackPanel Orientation="Vertical">
+                    
+                    <StackPanel HorizontalAlignment="Stretch"  Orientation="Vertical">
                         <Border BorderBrush="Black" BorderThickness="1.5">
-                            <Image Stretch="UniformToFill" Width="200" Height="150" x:CompileBindings="False">
-                                <Image.Source>
-                                    <Binding Path="Photo" Converter="{StaticResource ImageConverter}" />
-                                </Image.Source>
+                            <Image Stretch="UniformToFill" Source="{Binding Photo}" Width="200" Height="150" x:CompileBindings="False">
                             </Image>
                         </Border>
                         <Border BorderBrush="Black" BorderThickness="1.5">
@@ -72,6 +71,7 @@
                                    Text="{Binding License}" Padding="5 0 0 0 ">
                         </TextBlock>
                     </StackPanel>
+                   
                 </DataTemplate>
             </ListBox.ItemTemplate>
             <ListBox.ItemsPanel>
@@ -80,6 +80,7 @@
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
         </ListBox>
+             </ScrollViewer>
     </Grid>
     </Panel>
 </UserControl>

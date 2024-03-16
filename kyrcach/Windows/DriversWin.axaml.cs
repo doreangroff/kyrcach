@@ -30,9 +30,10 @@ public partial class DriversWin : UserControl
                 LastName = reader.GetString("lastname"),
                 DriverName = reader.GetString("driverName"),
                 surNmae = reader.GetString("surName"),
-                Photo = reader["photo"] as byte[],
                 License = reader.GetString("license")
             };
+            var gymno = reader["photo"] as byte[];
+            curDriver.SetPhoto(gymno);
             _drivers.Add(curDriver);
         }
         _db.CloseConnection();
