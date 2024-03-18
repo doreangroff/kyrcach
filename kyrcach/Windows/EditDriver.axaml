@@ -1,11 +1,10 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:entitites="clr-namespace:kyrcach.Entities"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="kyrcach.Windows.AddDriver"
-             Width="675"
-             Height="480">
+             x:Class="kyrcach.Windows.EditDriver">
     <UserControl.Styles>
         <Style Selector="Button.avatar">
             <Setter Property="BorderBrush" Value="White"></Setter>
@@ -110,8 +109,8 @@
                             Orientation="Horizontal" Background="White" Margin="30 0 0 0">
                     <Border BorderBrush="Black" BorderThickness="1" Margin="0 0 20 0" Height="50">
                         <Button Classes="ishaq" Margin="3" Background="Black" Foreground="White" Name="AddBtn"
-                                Click="TinyVGashne"
-                                VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="ДОБАВИТЬ"
+                                Click="Edit"
+                                VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="ИЗМЕНИТЬ"
                                 VerticalContentAlignment="Center"
                                 CornerRadius="0" HorizontalContentAlignment="Center" Padding="5 0 5 0">
                         </Button>
@@ -124,7 +123,7 @@
                         </Button>
                     </Border>
                 </StackPanel>
-                <StackPanel Grid.Row="4" Grid.Column="2" Background="White" Width="229"></StackPanel>
+                <StackPanel Grid.Row="4" Grid.Column="2" Background="White" Width="230"></StackPanel>
             </Grid>
         </Border>
     </Panel>

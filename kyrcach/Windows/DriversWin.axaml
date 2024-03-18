@@ -33,9 +33,14 @@
                 <Setter Property="BorderBrush" Value="Transparent"></Setter>
             </Style>
         </Style>
-        <Style Selector="ListBoxItem:selected /template/ContentPresenter#PART_ContentPresenter">
-            <Setter Property="Background" Value="Transparent"></Setter>
+        <Style Selector="ListBoxItem">
+            <Style Selector="^:selected /template/ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Background" Value="SlateGray"></Setter>
+                <Setter Property="BorderBrush" Value="Black"></Setter>
+                <Setter Property="BorderThickness" Value="1.5"></Setter>
+            </Style>
         </Style>
+        
         <Style Selector="TextBlock">
             <Setter Property="FontSize" Value="26"></Setter>
             <Setter Property="FontFamily" Value="{StaticResource Omori}"></Setter>
@@ -47,17 +52,16 @@
             <StackPanel DockPanel.Dock="Top" Background="Black" Orientation="Horizontal" Height="50" Width="640" Margin="3" HorizontalAlignment="Center">
                 <Button Name="backBtn" Content="⬅" Margin="0 5 5 5" Click="Back"/>
                 <Button Name="addBtn" Content="ДОБАВИТЬ" Margin="5" Click="AddDriver"/>
-                <Button Name="editBtn" Content="ИЗМЕНИТЬ" Margin="5" />
-                <Button Name="delBtn" Content="УДАЛИТЬ" Margin="5" />
+                <Button Name="editBtn" Content="ИЗМЕНИТЬ" Margin="5" Click="EditDriver"/>
+                <Button Name="delBtn" Content="УДАЛИТЬ" Margin="5"  Click="DeleteDriver"/>
                 <TextBox Name="searchTb" Width="200" Watermark="ПОИСК" TextChanged="SeacrhDriver" Background="Black" Foreground="White" FontSize="26" 
                          Margin="5 5 0 5" FontFamily="{StaticResource Omori}" />
             </StackPanel>
         </Border>
              <ScrollViewer Grid.Row="1" AllowAutoHide="False" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Visible">
-        <ListBox HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="White" Grid.Row="1" Name="DriverLBox" Height="240" Margin="-5 -10 -10 10">
+        <ListBox HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="White" Grid.Row="1" Name="DriverLBox" Height="240" Margin="-7 -10 -10 10">
             <ListBox.ItemTemplate>
                 <DataTemplate DataType="entitites:Driver">
-                    
                     <StackPanel HorizontalAlignment="Stretch"  Orientation="Vertical">
                         <Border BorderBrush="Black" BorderThickness="1.5">
                             <Image Stretch="UniformToFill" Source="{Binding Photo}" Width="200" Height="150" x:CompileBindings="False">

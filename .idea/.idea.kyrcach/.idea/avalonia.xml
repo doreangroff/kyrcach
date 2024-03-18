@@ -7,7 +7,10 @@
         <entry key="kyrcach/MainWindow.axaml" value="kyrcach/kyrcach.csproj" />
         <entry key="kyrcach/Windows/AddDriver.axaml" value="kyrcach/kyrcach.csproj" />
         <entry key="kyrcach/Windows/Baza.axaml" value="kyrcach/kyrcach.csproj" />
+        <entry key="kyrcach/Windows/DelWin.axaml" value="kyrcach/kyrcach.csproj" />
         <entry key="kyrcach/Windows/DriversWin.axaml" value="kyrcach/kyrcach.csproj" />
+        <entry key="kyrcach/Windows/EditDrive.axaml" value="kyrcach/kyrcach.csproj" />
+        <entry key="kyrcach/Windows/EditDriver.axaml" value="kyrcach/kyrcach.csproj" />
         <entry key="kyrcach/Windows/MainWindow.axaml" value="kyrcach/kyrcach.csproj" />
         <entry key="kyrcach/Windows/MessageBox.axaml" value="kyrcach/kyrcach.csproj" />
       </map>

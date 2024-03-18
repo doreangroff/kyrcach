@@ -69,7 +69,6 @@ public partial class AddDriver : UserControl
             mes.ShowDialog(MainWindow.instance);
             Console.WriteLine("ERROR = " + exception);
         }
-        
     }
 
     private async void DriverPhoto(object? sender, RoutedEventArgs e)
@@ -84,7 +83,6 @@ public partial class AddDriver : UserControl
         
         if (files.Count >= 1)
         {
-            
             var imageStream = await files[0].OpenReadAsync();
             bitmap = new Bitmap(imageStream);
             PhotoBtn.Background = new ImageBrush(bitmap);

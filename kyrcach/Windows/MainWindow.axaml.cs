@@ -69,7 +69,6 @@ public partial class MainWindow : Window
 
     private void OpenMessage(object? sender, RoutedEventArgs e)
     {
-        MessageBox mes = new MessageBox();
-        mes.ShowDialog(this);
+       
     }
 }

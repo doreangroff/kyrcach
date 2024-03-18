@@ -20,7 +20,9 @@ public partial class DriversWin : UserControl
         InitializeComponent();
         ShowDrivers();
     }
-    public void ShowDrivers() {
+    public void ShowDrivers()
+    {
+        _drivers.Clear();
         _db.OpenConnection();
         MySqlCommand command = new MySqlCommand(_sql, _db.GetConnection());
         MySqlDataReader reader = command.ExecuteReader();
@@ -32,8 +34,8 @@ public partial class DriversWin : UserControl
                 surNmae = reader.GetString("surName"),
                 License = reader.GetString("license")
             };
-            var gymno = reader["photo"] as byte[];
-            curDriver.SetPhoto(gymno);
+            var ph = reader["photo"] as byte[];
+            curDriver.SetPhoto(ph);
             _drivers.Add(curDriver);
         }
         _db.CloseConnection();
@@ -63,5 +65,26 @@ public partial class DriversWin : UserControl
         Panel.Children.Clear();
         Panel.Children.Add(add);
         add.onClosing += delegate { ShowDrivers(); };
+    }
+
+    private void DeleteDriver(object? sender, RoutedEventArgs e)
+    {
+        var selectedDriver = DriverLBox.SelectedItem as Driver;
+        if (selectedDriver is null) return;
+
+        DelWin del = new DelWin(selectedDriver);
+        del.Closed += delegate { DriverLBox.ItemsSource = null; ShowDrivers(); };
+        del.ShowDialog(MainWindow.instance);
+    }
+
+    private void EditDriver(object? sender, RoutedEventArgs e)
+    {
+        var selectedDriver = DriverLBox.SelectedItem as Driver;
+        if (selectedDriver is null) return;
+
+        EditDriver edit = new EditDriver(selectedDriver);
+        Panel.Children.Clear();
+        Panel.Children.Add(edit);
+        edit.onClosing += delegate { ShowDrivers(); };
     }
 }

@@ -8,7 +8,7 @@
         WindowStartupLocation="CenterScreen"
         Width="675"
         Height="480"
-        CanResize="True"
+        CanResize="False"
         Title="творчество душевнобольных" Icon="/Photos/bus.ico">
     <Window.Styles>
         <Style Selector="Button">

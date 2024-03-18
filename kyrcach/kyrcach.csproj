@@ -42,6 +42,12 @@
       <AvaloniaResource Include="Photos\sigma.ico" />
       <None Remove="Photos\SinShluhi.jpg" />
       <AvaloniaResource Include="Photos\SinShluhi.jpg" />
+      <None Remove="Photos\trash.ico" />
+      <AvaloniaResource Include="Photos\trash.ico" />
+      <None Remove="Photos\krest.png" />
+      <AvaloniaResource Include="Photos\krest.png" />
+      <None Remove="Photos\osmotr.jpg" />
+      <AvaloniaResource Include="Photos\osmotr.jpg" />
     </ItemGroup>
 
 

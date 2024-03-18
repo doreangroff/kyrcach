@@ -3,9 +3,15 @@ using MySqlConnector;
 
 namespace kyrcach.Entities;
 
-public class Database
+public interface IDatabaseConnection
 {
-    private MySqlConnection _connection = new MySqlConnection(@"server=10.10.1.24;database=pro1_1;port=3306;User Id=user_01;password=user01pro");
+    void OpenConnection();
+    void CloseConnection();
+    MySqlConnection GetConnection();
+}
+public class Database : IDatabaseConnection
+{
+    private MySqlConnection _connection = new MySqlConnection(@"server=localhost;database=kyrsovaia;port=3306;User Id=user_1;password=1234");
     //new MySqlConnection(@"server=10.10.1.24;database=pro1_1;port=3306;User Id=user_01;password=user01pro");
     // new MySqlConnection(@"server=localhost;database=kyrsovaia;port=3306;User Id=user_1;password=1234");
 

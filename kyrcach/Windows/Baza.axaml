@@ -21,6 +21,8 @@
         </Style>
         <Style Selector="ListBoxItem:selected /template/ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="Transparent"></Setter>
+            <Setter Property="BorderBrush" Value="Transparent"></Setter>
+            <Setter Property="BorderThickness" Value="0"></Setter>
         </Style>
         <Style Selector="ScrollBar[Orientation=Vertical]">
             <Setter Property="IsVisible" Value="False"/>
@@ -47,8 +49,8 @@
                                 </Border>
                             </Grid>
                             <Grid Grid.Row="1" ColumnDefinitions="Auto, *">
-                                <Border HorizontalAlignment="Stretch" Grid.Column="0" BorderBrush="White" BorderThickness="1.5" Width="100" Height="102">
-                                    <Image Stretch="UniformToFill" Height="100" Width="96" VerticalAlignment="Stretch" Source="/Photos/abobus.jpg"
+                                <Border HorizontalAlignment="Stretch" Grid.Column="0" BorderBrush="White" BorderThickness="1.5" Width="120" Height="102">
+                                    <Image Stretch="UniformToFill" Height="100" Width="116" VerticalAlignment="Stretch" Source="/Photos/abobus.jpg"
                                           HorizontalAlignment="Left">
                                     </Image>
                                 </Border>
@@ -87,8 +89,8 @@
                                 </Border>
                             </Grid>
                             <Grid Grid.Row="1" ColumnDefinitions="Auto, *">
-                                <Border HorizontalAlignment="Stretch" Grid.Column="0" BorderBrush="White" BorderThickness="1.5" Width="100" Height="102">
-                                    <Image Stretch="Fill" Height="100" Width="96" VerticalAlignment="Stretch" Source="/Photos/SinShluhi.jpg"
+                                <Border HorizontalAlignment="Stretch" Grid.Column="0" BorderBrush="White" BorderThickness="1.5" Width="120" Height="102">
+                                    <Image Stretch="Fill" Height="100" Width="116" VerticalAlignment="Stretch" Source="/Photos/SinShluhi.jpg"
                                           HorizontalAlignment="Left">
                                     </Image>
                                 </Border>
@@ -127,8 +129,8 @@
                                 </Border>
                             </Grid>
                             <Grid Grid.Row="1" ColumnDefinitions="Auto, *">
-                                <Border HorizontalAlignment="Stretch" Grid.Column="0" BorderBrush="White" BorderThickness="1.5" Width="100" Height="102">
-                                    <Image Stretch="Fill" Height="100" Width="100" VerticalAlignment="Stretch"
+                                <Border HorizontalAlignment="Stretch" Grid.Column="0" BorderBrush="White" BorderThickness="1.5" Width="120" Height="102">
+                                    <Image Stretch="Fill" Height="100" Width="116" VerticalAlignment="Stretch" Source="/Photos/krest.png"
                                           HorizontalAlignment="Left">
                                     </Image>
                                 </Border>
@@ -167,8 +169,8 @@
                                 </Border>
                             </Grid>
                             <Grid Grid.Row="1" ColumnDefinitions="Auto, *">
-                                <Border HorizontalAlignment="Stretch" Grid.Column="0" BorderBrush="White" BorderThickness="1.5" Width="100" Height="102">
-                                    <Image Stretch="Fill" Height="100" Width="100" VerticalAlignment="Stretch"
+                                <Border HorizontalAlignment="Stretch" Grid.Column="0" BorderBrush="White" BorderThickness="1.5" Width="120" Height="102">
+                                    <Image Stretch="Fill" Height="100" Width="116" VerticalAlignment="Stretch" Source="/Photos/osmotr.jpg"
                                           HorizontalAlignment="Left">
                                     </Image>
                                 </Border>

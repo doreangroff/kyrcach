@@ -13,22 +13,28 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = kyrcach
-build_property.ProjectDir = /home/student/RiderProjects/kyrcach/kyrcach/
+build_property.ProjectDir = C:\Users\User\RiderProjects\kyrcach\kyrcach\
 
-[/home/student/RiderProjects/kyrcach/kyrcach/App.axaml]
+[C:/Users/User/RiderProjects/kyrcach/kyrcach/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/student/RiderProjects/kyrcach/kyrcach/Windows/AddDriver.axaml]
+[C:/Users/User/RiderProjects/kyrcach/kyrcach/Windows/AddDriver.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/student/RiderProjects/kyrcach/kyrcach/Windows/Baza.axaml]
+[C:/Users/User/RiderProjects/kyrcach/kyrcach/Windows/Baza.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/student/RiderProjects/kyrcach/kyrcach/Windows/DriversWin.axaml]
+[C:/Users/User/RiderProjects/kyrcach/kyrcach/Windows/DelWin.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/student/RiderProjects/kyrcach/kyrcach/Windows/MainWindow.axaml]
+[C:/Users/User/RiderProjects/kyrcach/kyrcach/Windows/DriversWin.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/student/RiderProjects/kyrcach/kyrcach/Windows/MessageBox.axaml]
+[C:/Users/User/RiderProjects/kyrcach/kyrcach/Windows/EditDriver.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/User/RiderProjects/kyrcach/kyrcach/Windows/MainWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/User/RiderProjects/kyrcach/kyrcach/Windows/MessageBox.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
